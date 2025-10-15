@@ -1,8 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
+  console.log("JS cargado correctamente");
+
   const imagenes = [
-    "imagenes/slide1.jpg",
-    "imagenes/slide2.jpg",
-    "imagenes/slide3.jpg"
+    "imagenes/slide1.jpg.jpg",
+    "imagenes/slide2.jpg.jpg",
+    "imagenes/slide3.jpg.jpg",
   ];
 
   let index = 0;
@@ -23,6 +25,11 @@ document.addEventListener("DOMContentLoaded", () => {
     index = (index + 1) % imagenes.length;
     mostrar();
   });
+
+  setInterval(() => {
+    index = (index + 1) % imagenes.length;
+    mostrar();
+  }, 3000);
 
   mostrar();
 });
