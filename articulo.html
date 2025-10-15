@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mi Sitio - Artículo</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <div class="brand">MiSitio</div>
+      <ul class="nav-list">
+        <li><a href="index.html">Principal</a></li>
+        <li><a href="articulo.html" class="active">Artículo</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container article-layout">
+    <h1>Productos y Servicios</h1>
+    <div class="columns">
+      <div class="col main">
+        <h2>Artículo Principal</h2>
+        <p>Aquí podés explicar tus productos, servicios o ideas.</p>
+      </div>
+      <aside class="col side">
+        <h3>Detalles</h3>
+        <ul>
+          <li>Característica A</li>
+          <li>Característica B</li>
+        </ul>
+      </aside>
+      <aside class="col side">
+        <h3>Contacto</h3>
+        <p>Consulta para más información.</p>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year2"></span> MiSitio</p>
+  </footer>
+
+  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>
