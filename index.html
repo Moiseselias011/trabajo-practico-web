@@ -2,18 +2,17 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Mi Sitio - Principal</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <!-- Encabezado con menú -->
+  <!-- Encabezado con menu -->
   <header class="site-header">
     <nav class="nav">
       <div class="brand">MiSitio</div>
       <ul class="nav-list">
         <li><a href="index.html" class="active">Principal</a></li>
-        <li><a href="articulo.html">Artículo</a></li>
+        <li><a href="articulo.html">Articulo</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
@@ -26,28 +25,98 @@
       <p>Este sitio fue creado como trabajo práctico integrador de HTML, CSS y JavaScript.</p>
     </section>
 
-    <!-- Carousel -->
+    <!-- Carrusel  -->
     <section class="carousel-section">
       <div id="carousel" class="carousel">
         <button id="prevBtn" class="carousel-btn prev">&lt;</button>
+
         <div class="carousel-viewport">
-        
- <img id="carouselImage" src="imagenes/slide1.jpg.jpg" >
-</div>
-<button id="nextBtn" class="carousel-btn next">&gt;</button>
-</div>
-<div id="carousel-indicators" class="indicators"></div>
- </section>
+          <img id="carouselImage" src="imagenes/slide1.jpg" alt="Imagen del carrusel">
+        </div>
+
+        <button id="nextBtn" class="carousel-btn next">&gt;</button>
+
+        <div id="carousel-indicators" class="indicators"></div>
+      </div>
+    </section>
   </main>
 
-  <!-- Pie de página -->
+  <!-- Pie de pagina -->
   <footer class="site-footer">
-    <p>© <span id="year"></span> MiSitio</p>
+    <p><span id="year"></span> MiSitio</p>
   </footer>
 
-  <script src="js/carousel.js"></script>
+
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // --- Codigo del carrusel ---
+    document.addEventListener("DOMContentLoaded", function () {
+      const images = [
+        "imagenes/slide1.jpg",
+        "imagenes/slide2.jpg",
+        "imagenes/slide3.jpg"
+      ];
+
+      let currentIndex = 0;
+      const img = document.getElementById("carouselImage");
+      const prevBtn = document.getElementById("prevBtn");
+      const nextBtn = document.getElementById("nextBtn");
+      const indicatorsContainer = document.getElementById("carousel-indicators");
+
+      images.forEach((_, index) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (index === 0) dot.classList.add("active");
+        dot.addEventListener("click", () => {
+          currentIndex = index;
+          updateCarousel();
+          resetAutoSlide();
+        });
+        indicatorsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll(".dot");
+
+      function updateCarousel() {
+        img.src = images[currentIndex];
+        dots.forEach((dot, i) => dot.classList.toggle("active", i === currentIndex));
+      }
+
+      function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateCarousel();
+      }
+
+      function prevImage() {
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        updateCarousel();
+      }
+
+      nextBtn.addEventListener("click", () => {
+        nextImage();
+        resetAutoSlide();
+      });
+
+      prevBtn.addEventListener("click", () => {
+        prevImage();
+        resetAutoSlide();
+      });
+
+      let intervalId = null;
+      const INTERVAL_TIME = 4000;
+
+      function startAutoSlide() {
+        intervalId = setInterval(nextImage, INTERVAL_TIME);
+      }
+
+      function resetAutoSlide() {
+        clearInterval(intervalId);
+        startAutoSlide();
+      }
+
+      startAutoSlide();
+    });
   </script>
 </body>
 </html>

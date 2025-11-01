@@ -20,11 +20,11 @@ form.addEventListener('submit', (e) => {
     ok = false;
   }
   if (!regexEmail.test(email)) {
-    document.getElementById('error-email').textContent = 'Email inválido';
+    document.getElementById('error-email').textContent = 'Email invalido';
     ok = false;
   }
   if (!regexTel.test(telefono)) {
-    document.getElementById('error-telefono').textContent = 'Teléfono inválido';
+    document.getElementById('error-telefono').textContent = 'Telefono invalido';
     ok = false;
   }
 
@@ -34,7 +34,7 @@ form.addEventListener('submit', (e) => {
   div.innerHTML = `<h3>Datos enviados</h3>
     <p>Nombre: ${nombre}</p>
     <p>Email: ${email}</p>
-    <p>Teléfono: ${telefono}</p>
+    <p>Telefono: ${telefono}</p>
     <p>Mensaje: ${mensaje || '(sin mensaje)'}</p>`;
   resultado.innerHTML = '';
   resultado.appendChild(div);
