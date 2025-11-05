@@ -1,0 +1,232 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  background-color: #121212;
+  color: #e5e5e5;
+  line-height: 1.6;
+}
+
+/* === encabezado y menu  === */
+.site-header {
+  background-color: #1f1f1f;
+  border-bottom: 2px solid #2b2b2b;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #a78bfa; 
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #e5e5e5;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-list a:hover,
+.nav-list a.active {
+  color: #a78bfa;
+}
+
+/* === contenedores generales  === */
+.container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* === inicio === */
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero h1 {
+  color: #a78bfa;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  color: #bbb;
+}
+
+/* === CARRUSEL === */
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: #1f1f1f;
+  padding: 1rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.carousel-viewport {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.carousel img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(167, 139, 250, 0.2);
+  border: none;
+  color: #a78bfa;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
+}
+
+.carousel-btn:hover {
+  background-color: rgba(167, 139, 250, 0.4);
+}
+
+.carousel-btn.prev {
+  left: 10px;
+}
+
+.carousel-btn.next {
+  right: 10px;
+}
+
+/* === articulo === */
+.article-layout .columns {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.article-layout .col {
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.article-layout h2,
+.article-layout h3 {
+  color: #a78bfa;
+  margin-bottom: 0.5rem;
+}
+
+/* === formulario de contacto === */
+form {
+  background-color: #1f1f1f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+label {
+  font-weight: bold;
+}
+
+input,
+textarea {
+  background-color: #2a2a2a;
+  border: 1px solid #3a3a3a;
+  color: #e5e5e5;
+  padding: 0.6rem;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #a78bfa;
+  outline: none;
+}
+
+button.btn {
+  background-color: #a78bfa;
+  color: #121212;
+  font-weight: bold;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button.btn:hover {
+  background-color: #c4b5fd;
+}
+
+/* ===errores o resultados=== */
+.error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  height: 1rem;
+}
+
+#resultado {
+  margin-top: 1.5rem;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+#resultado h3 {
+  color: #a78bfa;
+}
+
+/* === pie de pagina  === */
+.site-footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #1f1f1f;
+  border-top: 2px solid #2b2b2b;
+  margin-top: 3rem;
+  color: #999;
+}
+
+
+@media (max-width: 768px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .article-layout .columns {
+    flex-direction: column;
+  }
+
+  .carousel-btn {
+    font-size: 1.5rem;
+  }
+}
