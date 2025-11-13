@@ -229,4 +229,51 @@ button.btn:hover {
   .carousel-btn {
     font-size: 1.5rem;
   }
+  
+}
+.productos {
+  text-align: center;
+  padding: 20px;
+}
+
+.productos .intro {
+  font-size: 1.1em;
+  margin-bottom: 20px;
+  color: #555;
+}
+
+.productos-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.producto-card {
+  background-color: #531191;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 260px;
+  padding: 15px;
+  transition: transform 0.2s;
+}
+
+.producto-card:hover {
+  transform: scale(1.05);
+}
+
+.producto-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.producto-card h3 {
+  margin: 10px 0 5px;
+}
+
+.precio {
+  display: inline-block;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #e91e63;
 }
