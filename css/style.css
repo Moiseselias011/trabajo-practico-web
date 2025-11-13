@@ -187,12 +187,7 @@ button.btn:hover {
   background-color: #c4b5fd;
 }
 
-/* ===errores o resultados=== */
-.error {
-  color: #ff6b6b;
-  font-size: 0.9rem;
-  height: 1rem;
-}
+
 
 #resultado {
   margin-top: 1.5rem;
@@ -276,4 +271,11 @@ button.btn:hover {
   margin-top: 8px;
   font-weight: bold;
   color: #e91e63;
+}
+/* ===errores o resultados=== */
+.error {
+ color: red;
+  font-size: 0.9em;
+  margin-bottom: 8px;
+  display: block;
 }

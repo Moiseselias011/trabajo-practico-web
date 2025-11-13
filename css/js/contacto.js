@@ -1,9 +1,12 @@
+document.addEventListener('DOMContentLoaded', () => {
 const form = document.getElementById('contactForm');
 const resultado = document.getElementById('resultado');
 
+console.log(form, resultado);
+
 form.addEventListener('submit', (e) => {
   e.preventDefault();
-  document.querySelectorAll('.error').forEach(e => e.textContent = '');
+  document.querySelectorAll('.error').forEach(span => span.textContent = '');
 
   const nombre = document.getElementById('nombre').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -40,4 +43,6 @@ form.addEventListener('submit', (e) => {
   resultado.appendChild(div);
 
   form.reset();
+
+});
 });
