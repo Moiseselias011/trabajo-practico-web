@@ -2,8 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  
-  <title>Mi Sitio - Articulo</title>
+  <title>Mi Sitio - Productos</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -12,37 +11,46 @@
       <div class="brand">MiSitio</div>
       <ul class="nav-list">
         <li><a href="index.html">Principal</a></li>
-        <li><a href="articulo.html" class="active">Articulo</a></li>
+        <li><a href="articulo.html" class="active">Productos</a></li>
         <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <main class="container article-layout">
-    <h1>Productos y Servicios</h1>
-    <div class="columns">
-      <div class="col main">
-        <h2>Articulo Principal</h2>
-        <p>Aqui ponemos los productos o servicios.</p>
+  <main class="container productos">
+    <h1>Nuestros Productos</h1>
+    <p class="intro">Conoce nuestra seleccion de articulos destacados.</p>
+
+    <div class="productos-grid">
+      <div class="producto-card">
+        <img src="imagenes/prod1.jpg" alt="Producto 1">
+        <h3>Producto 1</h3>
+        <p>Descripcion breve del producto. Ideal para uso diario.</p>
+        <span class="precio">$5.000</span>
       </div>
-      <aside class="col side">
-        <h3>Detalles</h3>
-        <ul>
-          <li>Caracteristica 1</li>
-          <li>Caracteristica 2</li>
-        </ul>
-      </aside>
-      <aside class="col side">
-        <h3>Contacto</h3>
-        <p>Consulta para mas informacion.</p>
-      </aside>
+
+      <div class="producto-card">
+        <img src="imagenes/prod2.jpg" alt="Producto 2">
+        <h3>Producto 2</h3>
+        <p>Alta calidad y diseño moderno, disponible en varios colores.</p>
+        <span class="precio">$8.200</span>
+      </div>
+
+      <div class="producto-card">
+        <img src="imagenes/prod3.jpg" alt="Producto 3">
+        <h3>Producto 3</h3>
+        <p>Resistente y practico. Incluye garantia de 1 año.</p>
+        <span class="precio">$6.750</span>
+      </div>
     </div>
   </main>
 
   <footer class="site-footer">
-    <p> <span id="year2"></span> MiSitio</p>
+    <p><span id="year2"></span> MiSitio</p>
   </footer>
 
-  <script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
